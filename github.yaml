@@ -1,0 +1,4 @@
+name: A litte thin override for stash
+desc: Meh
+rules:
+  - DST-PORT,22,DIRECT
