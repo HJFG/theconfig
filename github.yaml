@@ -1,4 +1,6 @@
 name: A litte thin override for stash
 desc: Meh
+http:
+  
 rules:
   - DST-PORT,22,DIRECT
