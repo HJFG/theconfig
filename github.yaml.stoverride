@@ -2,8 +2,7 @@ name: A litte thin override for stash
 desc: Meh
 script:
   shortcuts:
-    git-ssh:
-      'github' in host and dst_port == '22' 
+    git-ssh:'github' in host and dst_port == '22' 
   
 rules:
   # - DST-PORT,22,DIRECT
