@@ -6,5 +6,5 @@ script:
       'github' in host and dst_port == '22' 
   
 rules:
-  #- DST-PORT,22,DIRECT
+  # - DST-PORT,22,DIRECT
   - SCRIPT,git-ssh,DIRECT
