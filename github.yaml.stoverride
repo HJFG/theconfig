@@ -1,9 +1,64 @@
 name: A litte thin override for stash
 desc: Meh
-script:
-  shortcuts:
-    git-ssh: host == 'github.com' and dst_port == 22 
-  
+proxy-groups:
+  -
+    name: '🚀 节点选择'
+    type: select
+    proxies:
+      - '🇭🇰 香港 01'
+      - '🇭🇰 香港 02'
+      - '🇭🇰 香港 03'
+      - '🇨🇳 台湾 01'
+      - '🇨🇳 台湾 02'
+      - '🇨🇳 台湾 03'
+      - '🇸🇬 新加坡 01'
+      - '🇸🇬 新加坡 02'
+      - '🇸🇬 新加坡 03'
+      - '🇯🇵 日本 01'
+      - '🇯🇵 日本 02'
+      - '🇯🇵 日本 03'
+      - '🇺🇲 美国 01'
+      - '🇺🇲 美国 02'
+      - '🇺🇲 美国 03'
+      - '🇰🇷 韩国 01'
+      - '🇷🇺 俄罗斯 01'
+      - '🇨🇦 加拿大 01'
+      - '🇮🇩 印尼 01'
+      - '🇮🇳 印度 01'
+      - '🇹🇷 土耳其 01'
+      - '🇧🇷 巴西 01'
+      - '🇩🇪 德国 01'
+      - '🇹🇭 泰国 01'
+      - '🇦🇺 澳大利亚 01'
+      - '🇬🇧 英国 01'
+      - '🇳🇱 荷兰 01'
+      - '🇵🇭 菲律宾 01'
+      - '🇲🇾 马来西亚 01'
+      - DIRECT
+  -
+    name: '🎯 全球直连'
+    type: select
+    proxies:
+      - DIRECT
+      - '🚀 节点选择'
+  -
+    name: '🐟 漏网之鱼'
+    type: select
+    proxies:
+      - '🚀 节点选择'
+      - DIRECT
+ -
+    name: '🚀 美国节点'  # 这是新添加的代理组名称
+    type: select 
+    proxies:
+      - '🇺🇲 美国 01'
+      - '🇺🇲 美国 02'
+      - '🇺🇲 美国 03'
+
+
+
 rules:
-  # - DST-PORT,22,DIRECT
-  - SCRIPT,git-ssh,DIRECT
+  - DOMAIN-SUFFIX,openai.com,🚀 美国节点
+  - DOMAIN-SUFFIX,auth0.com,🚀 美国节点
+  - DOMAIN-SUFFIX,bing.com,🚀 美国节点
+  - DOMAIN-SUFFIX,live.com,🚀 美国节点
